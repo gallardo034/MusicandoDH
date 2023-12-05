@@ -1,4 +1,6 @@
 const { log } = require('console');
+const bodyParser = require('body-parser');
+const express = require('express');
 const db = require('../database/models/index.js');
 const path = require('path');
 const initModels = require('../database/models/init-models');
@@ -44,24 +46,36 @@ const controller = {
         //res.send ('detalle de la cancion ' + req.params.id);
     },
 
-    createOne: async (req, res) => {
+    getCreate: (req, res) => {
+        res.render('agregarCancion');
+    },
+
+    create: async (req, res) => {
+
         const bodyData = req.body;
+
+        console.log(req.body);
+
         const nuevaCancion = {
             id: bodyData.id,
             titulo: bodyData.titulo,
             duracion: bodyData.duracion,
             genero_id: bodyData.genero_id,
             album_id: bodyData.album_id,
-            artista_id: bodyData.artista_id,
-        };
-        try { await canciones.create(nuevaCancion);
-            
-            res.render('agregarCancion', {nuevaCancion: nuevaCancion});
-            console.log(nuevaCancion);
+            artista_id: bodyData.artista_id
+        }
+
+        try {
+
+            await canciones.create(nuevaCancion);
+
+            res.redirect('/canciones');
 
         } catch (error) {
-            console.log(error);
+
+            res.send(error);
         }
+
     }
 }
 

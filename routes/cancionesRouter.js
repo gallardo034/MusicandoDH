@@ -6,6 +6,8 @@ router.get('/canciones', cancionesController.list);
 
 router.get('/canciones/:id', cancionesController.getById);
 
-router.post('/canciones/agregar', cancionesController.createOne);
+router.get('/crear', cancionesController.getCreate);
+
+router.post('/canciones', cancionesController.create);
 
 module.exports = router ;

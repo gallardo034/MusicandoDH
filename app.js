@@ -9,6 +9,9 @@ app.set('view engine', 'ejs');
 app.set('views',[
     path.join(__dirname,'views/main'),]);
 
+app.use (express.json());
+app.use (express.urlencoded({extended: true}));
+
 app.use(cancionesRouter);
 
 app.listen (3000, () => {
