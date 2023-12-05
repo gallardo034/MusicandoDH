@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href=".\Recuperatorio DH\canciones.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canciones</title>
+</head>
+<body>
+    <h1 class="titulo" >Listado de canciones y sus propiedades</h1>
+    <ul>
+
+        <% for (let i = 0; i < cancion.length; i++) { %>
+            
+            <li>
+                <%= cancion[i].titulo %>
+            </li>
+            
+        <% } %>
+
+    </ul>
+</body>
+</html>
