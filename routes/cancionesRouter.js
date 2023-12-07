@@ -14,6 +14,8 @@ router.get('/canciones/:id/editar', cancionesController.getEdit);
 
 router.put('/canciones/:id/editar', cancionesController.edit);
 
+router.get('/canciones/:id/eliminar', cancionesController.getEliminar);
+
 router.delete('/canciones/:id/eliminar', cancionesController.eliminar);
 
 module.exports = router ;

@@ -120,6 +120,20 @@ const controller = {
         }
     },
 
+    getEliminar: async (req, res) => {
+        
+        const cancionId = req.params.id;
+
+        const cancionn = await canciones.findByPk(cancionId, { raw: true });
+
+        try {
+            res.render('eliminarCancion', {cancionn});
+
+        } catch (error) {
+            console.log(error);
+        }
+    },
+
     eliminar: async (req, res) => {
 
         const id = req.params.id;

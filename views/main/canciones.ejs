@@ -2,6 +2,42 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="/stylesheets/canciones.css">
+    <style>
+        body {
+            background-color: darkcyan;
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+            text-decoration: overline;
+        }
+
+        ul{
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        a {
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        li{
+            list-style: none;
+            margin: 10px;
+        }
+
+        div {
+            color: black;
+            text-align: center;
+            font-size: xx-large;
+            text-decoration: double;
+        }
+
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Canciones</title>
@@ -13,7 +49,9 @@
         <% for (let i = 0; i < cancion.length; i++) { %>
             
             <li>
+                <a href="/canciones/<%= cancion[i].id %>">
                 <%= cancion[i].titulo %>
+                </a>
             </li>
             
         <% } %>
@@ -21,7 +59,7 @@
     </ul>
 
     <div>
-        <a href="/crear">Agregar cancion</a>
+        <a href="/crear">AGREGAR CANCION</a>
     </div>
 </body>
 </html>
