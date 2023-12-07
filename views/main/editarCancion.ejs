@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>editar cancion</title>
+</head>
+<body>
+    <h1>Editar Cancion</h1>
+
+    <form action="/canciones/<%= cancion.id %>/editar?_method=PUT" method="POST">
+    <input type="number" name="id"  value= "<%= cancion.id %>" placeholder="id">
+    <input type="text" name="titulo" value= "<%= cancion.titulo %>" placeholder="titulo">
+    <input type="number" name="duracion" value= "<%= cancion.duracion %>" placeholder="duracion">
+    <input type="number" name="genero_id" value= "<%= cancion.genero_id %>" placeholder="genero_id">
+    <input type="number" name="album_id" value= "<%= cancion.album_id %>" placeholder="album_id">
+    <input type="number" name="artista_id" value= "<%= cancion.artista_id %>" placeholder="artista_id">
+    <input type="submit" value="editar">
+    </form>
+</body>
+</html>

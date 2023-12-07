@@ -8,5 +8,11 @@
 <body>
     <h1>Detalle de la cancion <%= cancionn.titulo %>
 
+
+    <form action="/canciones/<%= cancionn.id %>/editar?_method=PUT" method="POST"></form>
+    <input type="submit" value="Editar Cancion">
+
+    <form action="/canciones/<%= cancionn.id %>/eliminar?_method=delete" method="post"></form>
+        <input type="submit" value="Eliminar Cancion">
 </body>
 </html>

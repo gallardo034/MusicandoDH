@@ -10,4 +10,10 @@ router.get('/crear', cancionesController.getCreate);
 
 router.post('/canciones', cancionesController.create);
 
+router.get('/canciones/:id/editar', cancionesController.getEdit);
+
+router.put('/canciones/:id/editar', cancionesController.edit);
+
+router.delete('/canciones/:id/eliminar', cancionesController.eliminar);
+
 module.exports = router ;

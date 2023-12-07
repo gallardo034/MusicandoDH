@@ -76,6 +76,67 @@ const controller = {
             res.send(error);
         }
 
+    }, 
+    
+    getEdit: async (req, res) => {
+
+        try {
+
+            const cancion = await canciones.findByPk(req.params.id);
+            res.render('editarCancion', {cancion});
+
+        } catch (error) {
+
+            res.send(error);
+        }
+
+    },
+
+    edit: async (req, res) => {
+
+        const bodyData = req.body;
+
+        const updatedCancion = {
+            id: bodyData.id,
+            titulo: bodyData.titulo,
+            duracion: bodyData.duracion,
+            genero_id: bodyData.genero_id,
+            album_id: bodyData.album_id,
+            artista_id: bodyData.artista_id
+        }
+
+        try {
+            
+            await canciones.update(updatedCancion, {
+                where: {
+                    id: req.params.id
+                }
+            });
+            res.redirect('/canciones');
+
+
+        } catch (error) {
+            res.send(error);
+        }
+    },
+
+    eliminar: async (req, res) => {
+
+        const id = req.params.id;
+
+        try {
+            
+            canciones.destroy({
+                where: {
+                    id
+                }
+            })
+
+        } catch (error) {
+            console.log(error);
+        }
+        
+        res.redirect('/canciones');
     }
 }
 
