@@ -135,9 +135,9 @@ const controller = {
     },
 
     eliminar: async (req, res) => {
-
+        
         const id = req.params.id;
-
+        
         try {
             
             canciones.destroy({
@@ -145,7 +145,7 @@ const controller = {
                     id
                 }
             })
-
+            
         } catch (error) {
             console.log(error);
         }

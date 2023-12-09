@@ -28,8 +28,10 @@
         }
 
         li{
+            font-size: 24px;
             list-style: none;
             margin: 10px;
+            text-decoration: none;
         }
 
         div {
@@ -39,17 +41,32 @@
             text-decoration: double;
         }
 
+        input{
+            margin-top: 15px;
+            font-size:large;
+        }
+
     </style>
 </head>
 <body>
-    <h1>Detalle de la cancion <%= cancionn.titulo %>
+    <h1>Detalle de la cancion: <%= cancionn.titulo %></h1>
+
+        <ul>
+            <li>Id: <%= cancionn.id %></li>
+            <li>Titulo: <%= cancionn.titulo %></li>
+            <li>Duracion: <%= cancionn.duracion %></li>
+            <li>Genero_id: <%= cancionn.genero_id %></li>
+            <li>Album_id: <%= cancionn.album_id %></li>
+            <li>Artista_id: <%= cancionn.artista_id %></li>
+        </ul>
+
 
         <div>
         <a href="/canciones/<%= cancionn.id %>/editar">
     <input type="submit" value="Editar Cancion">
         </a>
 <br>
-    <!--<form action="/canciones/%= cancionn.id %>/eliminar?_method=DELETE" method="POST"></form>-->
+    
         <a href="/canciones/<%= cancionn.id %>/eliminar">
         <input type="submit" value="Eliminar Cancion">
         </a>

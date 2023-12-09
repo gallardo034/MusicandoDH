@@ -27,14 +27,24 @@
 
         li{
             list-style: none;
-            margin: 10px;
+            margin: 15px;
+        }
+
+        li:hover{
+            font-size: 18px;
+            text-decoration:underline;
+            color: blue;
         }
 
         div {
-            color: black;
             text-align: center;
             font-size: xx-large;
-            text-decoration: double;
+            display: flex;
+            justify-content: center;
+        }
+
+        div:hover{
+            color: blue;
         }
 
     </style>
@@ -50,7 +60,7 @@
             
             <li>
                 <a href="/canciones/<%= cancion[i].id %>">
-                <%= cancion[i].titulo %>
+                <%= cancion[i].id %> - <%= cancion[i].titulo %>
                 </a>
             </li>
             
@@ -62,4 +72,11 @@
         <a href="/crear">AGREGAR CANCION</a>
     </div>
 </body>
+<footer>
+    <br>
+
+
+
+    <br>
+</footer>
 </html>
