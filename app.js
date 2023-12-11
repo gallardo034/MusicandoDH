@@ -2,6 +2,7 @@ const express = require ('express');
 const app = express();
 const path = require('path');
 const cancionesRouter = require ('./routes/cancionesRouter')
+const generosRouter = require ('./routes/generosRouter')
 const methodOverride = require('method-override');
 
 
@@ -16,6 +17,7 @@ app.use(methodOverride('_method'));
 
 
 app.use(cancionesRouter);
+app.use(generosRouter);
 
 
 app.listen (3000, () => {
