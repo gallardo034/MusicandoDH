@@ -20,3 +20,5 @@ que vas a modificar.
 DELETE a http://localhost:3000/canciones/:id/eliminar para eliminar el registro de una cancion. Para ello deberas poner el numero de id de la cancion que deseas eliminar en Params, Path Variables value.
 
 GET a http://localhost:3000/generos recibis la lista de generos y sus canciones.
+
+Puse una “continuación” detrás de algunas rutas con ID siguiendo un consejo de Nacho sobre ciberseguridad que dio en clase, para evitar intentos de post automatizados.
