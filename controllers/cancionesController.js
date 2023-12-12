@@ -36,7 +36,7 @@ const controller = {
         try {
 
             const cancion = await canciones.findAll({ raw: true });
-            res.json(cancion);
+            res.status(200).json(cancion);
 
 
 
@@ -73,7 +73,7 @@ const controller = {
         try {
 
             const cancionn = await canciones.findByPk(cancionId, { raw: true });
-            res.json({ cancionn });
+            res.status(200).json({ cancionn });
 
 
         } catch (error) {
@@ -140,6 +140,7 @@ const controller = {
 
         } catch (error) {
             console.error(error);
+            res.json({ error: 'Server Error', code: '504' })
         }
 
     },
@@ -229,6 +230,7 @@ const controller = {
 
         } catch (error) {
             console.log(error);
+            res.json({ error: 'Server Error', code: '504' })
         }
     },
 
@@ -292,6 +294,7 @@ const controller = {
                 res.json(eliminarCancion);
         } catch (error) {
             console.error(error);
+            res.json({ error: 'Server Error', code: '504' })
         }
 
         

@@ -1,0 +1,22 @@
+
+En postman,
+
+GET a http://localhost:3000/canciones recibis la lista de canciones y sus propiedades.
+
+
+GET a http://localhost:3000/canciones/:id recibis la cancion que pusiste el id.
+
+
+POST a http://localhost:3000/canciones, vas al Body y en los Keys pones id, titulo, duracion, genero_id, album_id, 
+
+artista_id. En value llenas los campos con los valores que quieras agregar para la cancion.
+
+PUT a http://localhost:3000/canciones/:id/editar para editar una cancion. En el body le sacas el tick a id y 
+
+modificas los valores que quieras. Vas a Params, en Path Variables y en value pones el numero de id de la cancion 
+
+que vas a modificar.
+
+DELETE a http://localhost:3000/canciones/:id/eliminar para eliminar el registro de una cancion. Para ello deberas poner el numero de id de la cancion que deseas eliminar en Params, Path Variables value.
+
+GET a http://localhost:3000/generos recibis la lista de generos y sus canciones.
